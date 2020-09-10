@@ -31,14 +31,13 @@ const styles = StyleSheet.create({
 });
 
 const IdolSelect = () => {
+  const listIdols = Object.keys(idolToUnit);
+
   const [filterTypes, setFilterTypes] = useState([
     'princess',
     'fairy',
     'angel',
   ]);
-
-  const listIdols = Object.keys(idolToUnit);
-  console.log(listIdols);
 
   const setFilter = (type) => {
     if (filterTypes.indexOf(type) !== -1) {
@@ -95,18 +94,23 @@ const IdolSelect = () => {
     );
   };
 
+  const idolButtons = listIdols.map((idol, index) => {
+    if (filterTypes.indexOf(idolData[idol].type) === -1) {
+      return null;
+    }
+    return <IdolButton key={index} idol={idol} />;
+  });
+
   return (
     <>
-      <View style={styles.container}>
+      <View>
         <View style={styles.filterButtonArea}>
           {filterButtonBuilder('princess')}
           {filterButtonBuilder('fairy')}
           {filterButtonBuilder('angel')}
         </View>
       </View>
-      <ScrollView>
-        <IdolButton />
-      </ScrollView>
+      <ScrollView style={styles.container}>{idolButtons}</ScrollView>
     </>
   );
 };

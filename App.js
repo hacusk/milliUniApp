@@ -18,8 +18,8 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <Header />
-        <IdolSelect />
       </SafeAreaView>
+      <IdolSelect />
     </>
   );
 };
