@@ -6,29 +6,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
 import IdolButton from './IdolButton';
-
 import idolData from '../master/idolData.json';
 import idolToUnit from '../data/idolToUnit.json';
-
-const styles = StyleSheet.create({
-  container: {},
-
-  filterButtonArea: {
-    flexDirection: 'row',
-  },
-
-  filterButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 5,
-    paddingHorizontal: 15,
-    margin: 15,
-    borderWidth: 2,
-  },
-});
 
 const IdolSelect = () => {
   const listIdols = Object.keys(idolToUnit);
@@ -116,3 +96,21 @@ const IdolSelect = () => {
 };
 
 export default IdolSelect;
+
+const styles = StyleSheet.create({
+  container: {},
+
+  filterButtonArea: {
+    flexDirection: 'row',
+  },
+
+  filterButton: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    margin: 15,
+    borderWidth: 2,
+  },
+});
